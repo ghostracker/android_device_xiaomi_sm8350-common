@@ -25,10 +25,12 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "haydn lisa odin renoir venus"
+write_headers "haydn lisa odin renoir venus taoyao"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
+
+echo "TARGET_RECOVERY_DEVICE_DIRS += vendor/$VENDOR/$DEVICE/proprietary" >> "$BOARDMK"
 
 # Finish
 write_footers

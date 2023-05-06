@@ -55,6 +55,12 @@ TARGET_SCREEN_DENSITY := 440
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
+# Fingerprint
+ifeq ($(TARGET_HAS_UDFPS),true)
+TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
+TARGET_USES_FOD_ZPOS := true
+endif
+
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 LOC_HIDL_VERSION := 4.0
